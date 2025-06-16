@@ -9,7 +9,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('bg_texture.png');
+  background-image: url('./images/bg_texture.png');
   background-size: cover;
   background-position: center;
   font-family: sans-serif;
@@ -32,16 +32,17 @@ body {
 /* Signature-style name */
 .name {
   font-family: 'MyFont', cursive;
-  font-size: 6rem;                  /* bigger */
+  font-size: 6.5rem;                      /* slightly bigger */
   color: #000;
   position: absolute;
-  top: 10%;
+  top: 6%;                                /* moved up */
   z-index: 3;
-  transform: rotate(-5deg) skewX(-5deg);  /* signature slant */
-  font-weight: 300;
+  transform: rotate(-10deg) skewX(-10deg);  /* more slant */
+  font-weight: 200;                       /* thinner */
   opacity: 0.9;
   pointer-events: none;
   mix-blend-mode: multiply;
+  transform-origin: left;
 }
 
 .name span {
