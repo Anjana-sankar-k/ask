@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'MyFont';
+  src: url('./fonts/my_font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('bg_texture.png');
+  background-size: cover;
+  background-position: center;
+  font-family: sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Signature-style name */
+.name {
+  font-family: 'MyFont', cursive;
+  font-size: 6rem;                  /* bigger */
+  color: #000;
+  position: absolute;
+  top: 10%;
+  z-index: 3;
+  transform: rotate(-5deg) skewX(-5deg);  /* signature slant */
+  font-weight: 300;
+  opacity: 0.9;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+.name span {
+  margin-left: 15px;
+}
+
+/* Massive PORTFOLIO title */
+.title {
+  font-family: 'Anton', sans-serif;
+  font-size: 14rem;                /* made it bigger */
+  color: #ff91d2;
+  letter-spacing: 6px;
+  z-index: 1;
+  margin: 0;
+  position: relative;
+  line-height: 1;
+}
+
+/* Photo overlays the text */
+.hero-img {
+  position: absolute;
+  bottom: 0;
+  height: 90%;
+  z-index: 2;                      /* over text */
+  pointer-events: none;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
+}
