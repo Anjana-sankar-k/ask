@@ -9,7 +9,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('./images/bg_texture.png');
+  background-image: url('../images/bg_texture.png');
   background-size: cover;
   background-position: center;
   font-family: sans-serif;
