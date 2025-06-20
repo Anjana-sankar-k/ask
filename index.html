@@ -4,15 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anjana Sankar | Portfolio</title>
+
+  <!-- Style & Fonts -->
   <link rel="stylesheet" href="./styles/style.css" />
-  <!-- Anton for PORTFOLIO -->
+  <link rel="stylesheet" href="./styles/transition.css" />
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="hero">
-    <h1 class="name">Anjana <span>sankar</span></h1>
-    <h2 class="title">PORTFOLIO</h2>
-    <img src="./images/placeholder.png" alt="Anjana Sankar" class="hero-img" />
+
+  <!-- Swup transition container -->
+  <div id="swup" class="transition-fade">
+
+    <!-- Optional simple nav -->
+    <nav class="nav">
+      <a href="about.html">About</a>
+      <a href="experience.html">Experience</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <h1 class="name">Anjana <span>sankar</span></h1>
+      <h2 class="title">PORTFOLIO</h2>
+      <img src="./images/placeholder.png" alt="Anjana Sankar" class="hero-img" />
+    </div>
+
   </div>
+
+  <!-- Swup Script -->
+  <script src="https://unpkg.com/swup@4"></script>
+  <script>
+    const swup = new Swup();
+  </script>
+
 </body>
 </html>
