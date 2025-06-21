@@ -4,15 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me | Anjana Sankar</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="./styles/about.css" />
+  <link rel="stylesheet" href="./styles/transition.css" />
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-page="about">
+
+  <!-- Page transition overlay -->
+  <div class="page-transition"></div>
+
+  <!-- Content -->
+  <nav class="nav">
+    <a href="index.html">Home</a>
+  </nav>
+
   <div class="about-section">
     <h1 class="about-title">ABOUT ME</h1>
     <p class="about-text">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
     </p>
   </div>
+
+  <!-- Transition Script -->
+  <script>
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+      if (link.href && !link.href.startsWith('#')) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector('.page-transition').classList.add('active');
+          const href = this.getAttribute('href');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 600);
+        });
+      }
+    });
+
+    window.addEventListener('load', () => {
+      document.querySelector('.page-transition').classList.remove('active');
+    });
+  </script>
+
 </body>
 </html>

@@ -8,6 +8,12 @@ body {
   color: #111;
 }
 
+@font-face {
+  font-family: 'MyFont';
+  src: url('../fonts/my_font.ttf') format('truetype');
+}
+
+
 .experience-section {
   padding: 4rem 6rem;
   max-width: 1000px;

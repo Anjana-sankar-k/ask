@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Let's Connect | Anjana Sankar</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./styles/transition.css" />
+  <link rel="stylesheet" href="./styles/connect.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+</head>
+<body data-page="connect">
+
+  <div class="page-transition"></div>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="./index.html">Home</a>
+  </nav>
+
+  <div class="connect-container">
+    <div class="text-block">
+      <div class="heading-line">
+        <span class="lets">LET’S</span>
+        <span class="work">Work</span>
+      </div>
+      <div class="together">TOGETHER</div>
+
+      <div class="contact-info">
+        <p>⧉ <a href="https://www.linkedin.com/in/anjana-sankar-1ba508243/">LinkedIn</a></p>
+        <p>⊡ <a href="https://github.com/Anjana-sankar-k" target="_blank">GitHub</a></p>
+        <p>✉ <a href="mailto:anjanasankar50@gmail.com">Send me a mail!</a></p>
+      </div>
+
+      <a href="https://drive.google.com/file/d/15u8spyRvYUx_BALlSjRhxFPRhwRmThzE/view?usp=sharing" download class="resume-button">Download Resume</a>
+    </div>
+  </div>
+
+  <script>
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+      if (link.href && !link.href.startsWith('#') && !link.hasAttribute("download")) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector('.page-transition').classList.add('active');
+          const href = this.getAttribute('href');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 300);
+        });
+      }
+    });
+
+    window.addEventListener('load', () => {
+      document.querySelector('.page-transition').classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>

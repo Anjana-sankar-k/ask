@@ -1,0 +1,111 @@
+@font-face {
+  font-family: 'MyFont';
+  src: url('../fonts/my_font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Wrapper for each project slide */
+.project-slide {
+  display: block;
+}
+
+.project-slide.hidden {
+  display: none;
+}
+
+/* Project container layout */
+.project-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  width: 100%;
+  height: 100vh;
+  background-image: url('../images/project.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Project content */
+.project-left {
+  flex: 1;
+}
+
+.project-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 10rem;
+  color: #ff91d2;
+  margin-bottom: 2rem;
+}
+
+.project-desc {
+  color: white;
+  font-size: 1.2rem;
+  max-width: 500px;
+  line-height: 1.7;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.project-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-image {
+  width: 330px;
+  border: 14px solid white;
+  transform: rotate(8deg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin-top: -100px; /* ↑ Push upward */
+}
+
+/* GitHub link */
+.github-link {
+  position: absolute;
+  right: 16%;
+  bottom: 3.5%;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  font-family: 'MyFont', cursive;
+}
+
+.github-link:hover {
+  text-decoration: underline;
+  color: #ff91d2;
+}
+
+/* Navigation arrows */
+.scroll-arrow-right,
+.scroll-arrow-left {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+.scroll-arrow-right {
+  right: 1.5rem;
+}
+
+.scroll-arrow-left {
+  left: 1.5rem;
+}

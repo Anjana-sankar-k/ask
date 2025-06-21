@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'MyFont';
+  src: url('../fonts/my_font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.connect-container {
+  background-image: url('../images/connect.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 6rem;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.text-block {
+  color: white;
+  max-width: 600px;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.heading-line {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.lets {
+  font-family: 'Anton', sans-serif;
+  font-size: 10rem;
+  color: #ff91d2;
+}
+
+.work {
+  font-family: 'MyFont', cursive;
+  font-size: 6rem;
+  color: white;
+  margin-top: 2rem;
+}
+
+.together {
+  font-family: 'Anton', sans-serif;
+  font-size: 10rem;
+  color: #ff91d2;
+  margin-top: -1rem;
+}
+
+.contact-info {
+  margin-top: 3rem;
+  font-size: 1.2rem;
+}
+
+.contact-info p {
+  margin: 0.8rem 0;
+}
+
+.contact-info a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  color: #ff91d2;
+}
+
+.resume-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  background-color: #ff91d2;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.resume-button:hover {
+  background-color: white;
+  color: #ff91d2;
+}

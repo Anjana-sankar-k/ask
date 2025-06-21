@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Anjana Sankar</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./styles/project.css" />
+  <link rel="stylesheet" href="./styles/transition.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+</head>
+<body data-page="project">
+
+  <div class="page-transition"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="./index.html">Home</a>
+  </nav>
+
+  <!-- Project Slider -->
+  <div class="all-projects">
+
+    <!-- Project 01 -->
+    <div class="project-slide" id="project-1">
+      <div class="project-container">
+        <div class="project-left">
+          <h1 class="project-title">PROJECT 01</h1>
+          <p class="project-desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+        <div class="project-right">
+          <img src="./images/p1.png" alt="Project 1" class="project-image" />
+        </div>
+        <a href="https://github.com/your-project-link" class="github-link" target="_blank">GitHub Link</a>
+        <div class="scroll-arrow-right" onclick="goToNextProject()">→</div>
+      </div>
+    </div>
+
+    <!-- Project 02 -->
+    <div class="project-slide hidden" id="project-2">
+      <div class="project-container">
+        <div class="project-left">
+          <h1 class="project-title">PROJECT 02</h1>
+          <p class="project-desc">
+            A new project description can go here. You can continue adding new sections like this easily.
+          </p>
+        </div>
+        <div class="project-right">
+          <img src="./images/p2.png" alt="Project 2" class="project-image" />
+        </div>
+        <a href="https://github.com/another-project" class="github-link" target="_blank">GitHub Link</a>
+        <div class="scroll-arrow-left" onclick="goToPrevProject()">←</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JS -->
+  <script>
+    let currentProject = 1;
+
+    function showProject(id) {
+      const slides = document.querySelectorAll('.project-slide');
+      slides.forEach(slide => slide.classList.add('hidden'));
+
+      const target = document.getElementById(`project-${id}`);
+      if (target) {
+        target.classList.remove('hidden');
+        currentProject = id;
+      }
+    }
+
+    function goToNextProject() {
+      const next = document.getElementById(`project-${currentProject + 1}`);
+      if (next) {
+        showProject(currentProject + 1);
+      }
+    }
+
+    function goToPrevProject() {
+      const prev = document.getElementById(`project-${currentProject - 1}`);
+      if (prev) {
+        showProject(currentProject - 1);
+      }
+    }
+
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+      if (link.href && !link.href.startsWith('#')) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector('.page-transition').classList.add('active');
+          const href = this.getAttribute('href');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 300); // ⏱ Match the CSS duration (0.3s)
+
+        });
+      }
+    });
+
+    window.addEventListener('load', () => {
+      document.querySelector('.page-transition').classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>
